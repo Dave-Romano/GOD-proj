@@ -1,9 +1,13 @@
-import {configureStore} from '@reduxjs/toolkit';
-import changeWordReducer from './changeText';
+import { configureStore } from "@reduxjs/toolkit";
+import changeList from "./changeText";
 
-
-export default configureStore({
-    reducer: {
-        change: changeWordReducer
-    }
+const store = configureStore({
+  reducer: {
+    todos: changeList,
+  },
 });
+
+export default store;
+
+export type RootState = ReturnType<typeof store.getState>;
+export type AppDispatch = typeof store.dispatch;

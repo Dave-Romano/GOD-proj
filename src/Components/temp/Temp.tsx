@@ -1,21 +1,28 @@
-import {useState} from 'react'
-import { useSelector,useDispatch } from 'react-redux';
-import { changeWord } from '../../redux/store/changeText';
+import { useState } from "react";
+import { useSelector, useDispatch } from "react-redux";
+// import { changeWord } from "../../redux/store/changeText";
 
-const Temp = () => {
-    const [tempState, setTempState] = useState("second");
-    const testSending = () => {
-        setTempState('update');
-        const dispatch = useDispatch(changeWord());
-    }
-    const importantWord = useSelector(state => state.change.changeWord);
+import { useAppDispatch, useAppSelector } from "../../hooks/hook";
+import { changeWord } from "../../redux/store/changeText";
 
-    return (
-        <>
-            <p>{tempState}</p>
-            <button onClick={()=>testSending()}>add</button>
-        </>
-    );
-}
+interface TempProps {}
+
+const Temp: React.FC = () => {
+  const dispatch = useAppDispatch();
+  const result = useAppSelector((state) => state.todos.word);
+
+  const [tempState, setTempState] = useState("second");
+  const testSending = () => {
+    setTempState("update");
+  };
+  // const importantWord = useAppSelector((state) => state.change.changeWord);
+
+  return (
+    <>
+      <p>{result}</p>
+      <button onClick={() => dispatch(changeWord("worp"))}>add</button>
+    </>
+  );
+};
 
 export default Temp;
