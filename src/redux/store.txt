@@ -1,10 +1,28 @@
 // import { createStore } from "redux";
 
-// const initialState = {
-//   hpJake: 100,
-//   hpIuda: 100,
-//   hpLeo: 100,
-// };
+// const Players = [
+    {
+        namePublic: "Jake",
+        namePrivate: "Jake Porel",
+        race: "Forest Elf",
+        age: 21,
+        appearance: "blue eyes, dark hair",
+        moral: "caotic evil",
+        personalGoal:" rescue father from goblins prison",
+        //- - -
+        needs: [{water: 72}, {food: 72}, {sleep: 72}, {purity: 72}, {endurance: 150}]
+        effects: [{buffs:{}}, {debuffs:{}}, {hidden:{}}]
+        //- - -
+        attributes: [{power: 2}, {agility: 3}, {magicka:1}]
+        stats: [{damage: 20}, {health: 20}, {endurance: 20}, {magicDamage: 20}, {will: 30}, {mind: }]
+        skills: [{}]
+        abilities: {fire-ball: {}}
+        //- - -
+        inventory:[{weapon:{}}, {apparel:{}}, {potions:{}}, {ingredients:{}}, {scrolls:{}}, {equipment:{}}, {misc{}}, {gold{}}, {questItems:{}}]
+
+
+    }
+];
 
 // // VERYBADCODE
 // interface ReducerProps {
