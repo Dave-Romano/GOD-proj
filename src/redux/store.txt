@@ -1,4 +1,4 @@
-// import { createStore } from "redux";
+// store configuration
 
 // const Players = [
     {
@@ -23,28 +23,3 @@
 
     }
 ];
-
-// // VERYBADCODE
-// interface ReducerProps {
-//   type: any;
-//   payload: any;
-// }
-
-// const reducer = (state = initialState, { type, payload }: ReducerProps) => {
-//   switch (type) {
-//     case "counter/Increment":
-//       return {
-//         hpJake: state.hpJake + payload,
-//       };
-//     case "counter/Decrement":
-//       return {
-//         hpJake: state.hpJake - payload,
-//       };
-//     default:
-//       return state;
-//   }
-// };
-
-// const store = createStore(reducer);
-
-// export default store;
