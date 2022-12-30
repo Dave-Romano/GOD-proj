@@ -18,8 +18,29 @@
         skills: [{}]
         abilities: {fire-ball: {}}
         //- - -
-        inventory:[{weapon:{}}, {apparel:{}}, {potions:{}}, {ingredients:{}}, {scrolls:{}}, {equipment:{}}, {misc{}}, {gold{}}, {questItems:{}}]
-
-
+        inventory:[{weapon:{}}, {apparel:{}}, {potions:{}}, {ingredients:{}}, {scrolls:{}}, {equipment:{}}, {ф} {misc{}}, {gold{}}, {questItems:{}}]
     }
 ];
+
+const settings = {
+    //all
+    moralTypes: ["Lawful Good","Neutral Good","Chaotic Good","Lawful Neutral","Neutral","Chaotic Neutral","Lawful Evil","Neutral Evil","Chaotic Evil",]
+    weapons: {
+        light: {},
+        regular: {},
+        heavy:{},
+        twohanded:{},
+        throwing: {},
+        bows: {},
+        magic: {},
+    },
+    apparel: {
+        clothes: {},
+        light: {},
+        regular: {},
+        heavy: {},
+        mage: {},
+        special: {},
+
+    }
+}
