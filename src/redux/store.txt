@@ -23,7 +23,7 @@
         inventory:[{weapon:{}}, {apparel:{}}, {potions:{}}, {ingredients:{}}, {scrolls:{}}, {equipment:{}}, {ф} {misc{}}, {gold{}}, {questItems:{}}]
     }]
 };
-
+//test
 // const settings = {
     //all
     moralTypes: ["Lawful Good","Neutral Good","Chaotic Good","Lawful Neutral","Neutral","Chaotic Neutral","Lawful Evil","Neutral Evil","Chaotic Evil",]
