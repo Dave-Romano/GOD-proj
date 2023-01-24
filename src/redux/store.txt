@@ -1,7 +1,9 @@
 // store configuration
 
-// const Players = [
-    {
+// const Players = {
+    enteties: [{
+        isActive: ture, 
+        isGuest: false, // of true if it's regular player
         namePublic: "Jake",
         namePrivate: "Jake Porel",
         race: "Forest Elf",
@@ -10,26 +12,26 @@
         moral: "caotic evil",
         personalGoal:" rescue father from goblins prison",
         //- - -
-        needs: [{water: 72}, {food: 72}, {sleep: 72}, {purity: 72}, {endurance: 150}]
-        effects: [{buffs:{}}, {debuffs:{}}, {hidden:{}}]
+        needs: [{water: 72}, {food: 72}, {sleep: 72}, {purity: 72}, {endurance: 150}],
+        effects: [{buffs:{}}, {debuffs:{}}, {hiddenBuffs:{}}, {hiddenDebuffs:{}}],
         //- - -
-        attributes: [{power: 2}, {agility: 3}, {magicka:1}]
-        stats: [{damage: 20}, {health: 20}, {endurance: 20}, {magicDamage: 20}, {will: 30}, {mind: }]
-        skills: [{}]
-        abilities: {fire-ball: {}}
+        attributes: [{power: 2}, {agility: 3}, {magicka:1}],
+        stats: [{damage: 20}, {health: 20}, {endurance: 20}, {magicDamage: 20}, {will: 30}, {mind: }],
+        skills: [{}],
+        abilities: {fire-ball: {}},
         //- - -
         inventory:[{weapon:{}}, {apparel:{}}, {potions:{}}, {ingredients:{}}, {scrolls:{}}, {equipment:{}}, {ф} {misc{}}, {gold{}}, {questItems:{}}]
-    }
-];
+    }]
+};
 
-const settings = {
+// const settings = {
     //all
     moralTypes: ["Lawful Good","Neutral Good","Chaotic Good","Lawful Neutral","Neutral","Chaotic Neutral","Lawful Evil","Neutral Evil","Chaotic Evil",]
     weapons: {
         light: {},
-        regular: {},
+        oneHanded: {},
         heavy:{},
-        twohanded:{},
+        twoHanded:{},
         throwing: {},
         bows: {},
         magic: {},
@@ -41,6 +43,6 @@ const settings = {
         heavy: {},
         mage: {},
         special: {},
-
+        shields: {},
     }
 }
