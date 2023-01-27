@@ -1,11 +1,30 @@
 import { useEffect, useState } from "react";
 
 const PlayerCreatorPage: React.FC = () => {
-  const [publicNameValue, setPublicNameValue] = useState("");
+  // const [publicNameValue, setPublicNameValue] = useState("");
+  // const [privateNameValue, setPrivateNameValue] = useState("");
+  const [testObject, setTestObject] = useState({});
 
   useEffect(() => {
-    console.log(publicNameValue);
+    console.log(testObject);
   });
+
+  type PlayerObject = {
+    id: string;
+    publicName: string;
+    privateName: string;
+    race: string;
+    age: string;
+    moral: string;
+    personalGoal: string;
+    appearance: string;
+    prehistory: string;
+  };
+
+  const submitForm = (testObject: PlayerObject) => {
+    // let keyed = testObject.privateName;
+    // let result = { keyed: testObject };
+  };
 
   return (
     <>
@@ -15,7 +34,7 @@ const PlayerCreatorPage: React.FC = () => {
         type="text"
         placeholder="public name"
         onChange={(e) => {
-          setPublicNameValue(e.target.value);
+          setTestObject({ ...testObject, publicName: e.target.value });
         }}
       />
       <br />
@@ -23,7 +42,7 @@ const PlayerCreatorPage: React.FC = () => {
         type="text"
         placeholder="private name"
         onChange={(e) => {
-          setPublicNameValue(e.target.value);
+          setTestObject({ ...testObject, privateName: e.target.value });
         }}
       />
       <br />
@@ -31,7 +50,7 @@ const PlayerCreatorPage: React.FC = () => {
         type="text"
         placeholder="race"
         onChange={(e) => {
-          setPublicNameValue(e.target.value);
+          setTestObject({ ...testObject, race: e.target.value });
         }}
       />
       <br />
@@ -39,15 +58,7 @@ const PlayerCreatorPage: React.FC = () => {
         type="text"
         placeholder="age"
         onChange={(e) => {
-          setPublicNameValue(e.target.value);
-        }}
-      />
-      <br />
-      <input
-        type="text"
-        placeholder="appearance"
-        onChange={(e) => {
-          setPublicNameValue(e.target.value);
+          setTestObject({ ...testObject, age: e.target.value });
         }}
       />
       <br />
@@ -55,18 +66,31 @@ const PlayerCreatorPage: React.FC = () => {
         type="text"
         placeholder="moral"
         onChange={(e) => {
-          setPublicNameValue(e.target.value);
+          setTestObject({ ...testObject, moral: e.target.value });
         }}
       />
       <br />
       <input
-        onFocus={() => {
-          return "lit";
-        }}
         type="text"
         placeholder="personal goal"
         onChange={(e) => {
-          setPublicNameValue(e.target.value);
+          setTestObject({ ...testObject, personalGoal: e.target.value });
+        }}
+      />
+      <br />
+      <input
+        type="text"
+        placeholder="appearance"
+        onChange={(e) => {
+          setTestObject({ ...testObject, appearance: e.target.value });
+        }}
+      />
+      <br />
+      <input
+        type="text"
+        placeholder="prehistory"
+        onChange={(e) => {
+          setTestObject({ ...testObject, prehistory: e.target.value });
         }}
       />
 
@@ -74,7 +98,9 @@ const PlayerCreatorPage: React.FC = () => {
       <button type="button">yes</button>
 
       <br />
-      <button type="submit">submit</button>
+      <button type="submit" onClick={() => console.log("clicked")}>
+        submit
+      </button>
     </>
   );
 };

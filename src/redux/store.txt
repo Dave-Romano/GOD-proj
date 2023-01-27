@@ -12,6 +12,7 @@
         appearance: "blue eyes, dark hair",
         moral: "caotic evil",
         personalGoal:" rescue father from goblins prison",
+        playerPrehistory: "born in town named "malvic", have junior brother"
         //- - -
         needs: [{water: 72}, {food: 72}, {sleep: 72}, {purity: 72}, {endurance: 150}],
         effects: [{buffs:{}}, {debuffs:{}}, {hiddenBuffs:{}}, {hiddenDebuffs:{}}],
