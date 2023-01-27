@@ -2,6 +2,7 @@
 
 // const Players = {
     enteties: [{
+        id: "",
         isActive: ture, 
         isGuest: false, // of true if it's regular player
         namePublic: "Jake",

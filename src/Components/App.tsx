@@ -6,9 +6,9 @@ import { AppStyled } from "./AppStyled";
 import CounterPage from "../pages/counterPage/CounterPage";
 import Header from "../pages/header/Header";
 // import CreatorPage from "../pages/creatorPage/CreatorPage";
+import PlayerCreatorPage from "../pages/playerCreatorPage/playerCreatorPage";
 
-
-import Temp from './temp/Temp'
+import Temp from "./temp/Temp";
 
 // 1. Сохранение данных в local Storage
 // 2. Прописать карточку игрока
@@ -27,10 +27,11 @@ function App() {
   return (
     <AppStyled className="App">
       <div className="mainContainer">
+        <PlayerCreatorPage />
         {/* <NotFoundPage /> */}
-        <Header />
-        <CounterPage />
-        <Temp />
+        {/* <Header /> */}
+        {/* <CounterPage /> */}
+        {/* <Temp /> */}
 
         {/* <Navigation />
         <Routes>
