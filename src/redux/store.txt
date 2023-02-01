@@ -1,7 +1,7 @@
 // store configuration
 
-// const Players = {
-    enteties: [{
+// const Players = [
+   {
         id: "",
         isActive: ture, 
         isGuest: false, // of true if it's regular player
@@ -23,8 +23,8 @@
         abilities: {fire-ball: {}},
         //- - -
         inventory:[{weapon:{}}, {apparel:{}}, {potions:{}}, {ingredients:{}}, {scrolls:{}}, {equipment:{}}, {ф} {misc{}}, {gold{}}, {questItems:{}}]
-    }]
-};
+    }];
+    
 //test
 // const settings = {
     //all
@@ -48,3 +48,21 @@
         shields: {},
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
