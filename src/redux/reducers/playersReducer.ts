@@ -20,19 +20,13 @@ const initialState: InitialStateTypes = {
   players: {},
 };
 
-const testFN = (playerObject:PlayerElementTypes) => {
-let keye = playerObject.privateName;
-let value = playerObject;
-let result = {keye:value}
-return ...result
-}
+const testFN = (playerObject: PlayerElementTypes) => {};
 
 const playersSlice = createSlice({
   name: "players",
   initialState,
   reducers: {
     addPlayer(state, action: PayloadAction<string>) {
-      state.players = { ...state.players, {action.payload.privateName}: action.payload };
       console.log("reduser is working!!");
     },
   },
