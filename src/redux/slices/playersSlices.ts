@@ -13,25 +13,26 @@ type PlayerElementTypes = {
 };
 
 type InitialStateTypes = {
-  players: object;
+  players: Array;
 };
 
 const initialState: InitialStateTypes = {
-  players: {},
+  players: [],
 };
 
 const testFN = (playerObject: PlayerElementTypes) => {};
 
-const playersSlice = createSlice({
+const playersSlices = createSlice({
   name: "players",
   initialState,
   reducers: {
     addPlayer(state, action: PayloadAction<string>) {
+      state.players.push(action.payload);
       console.log("reduser is working!!");
     },
   },
 });
 
-export const { addPlayer } = playersSlice.actions;
+export const { addPlayer } = playersSlices.actions;
 
-export default playersSlice.reducer;
+export default playersSlices.reducer;

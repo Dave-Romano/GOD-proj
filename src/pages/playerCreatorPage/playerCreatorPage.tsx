@@ -1,4 +1,6 @@
 import { useEffect, useState } from "react";
+import { nanoid } from "nanoid";
+import { useAppSelector } from "../../hooks/hook";
 
 const PlayerCreatorPage: React.FC = () => {
   const [publicName, setPublicName] = useState("no name");
@@ -9,24 +11,18 @@ const PlayerCreatorPage: React.FC = () => {
   const [personalGoal, setPersonalGoal] = useState("no goal");
   const [appearance, setAppearance] = useState("no appearance");
   const [prehistory, setPrehistory] = useState("no prehistory");
+  const [playerObj, setPlayerObj] = useState({});
 
-  const testObject = {
-    publicName: publicName,
-    privateName: privateName,
-    race: race,
-    age: age,
-    moral: moral,
-    personalGoal: personalGoal,
-    appearance: appearance,
-    prehistory: prehistory,
-  };
+  const players = useAppSelector((state) => state.players.players);
 
-  const shortid = require("shortid");
+  // const uniqueId = nanoid();
 
   useEffect(() => {
-    console.log(testObject);
-    // console.log(shortid.generate());
-  });
+    console.log(playerObj);
+    // console.log(`UNIQUEID:${uniqueId}`);
+    // console.log(`UNIQUEID-V2:${uniqueId2}`);
+    // console.log(nanoid());
+  }, [playerObj]);
 
   type PlayerObject = {
     id: string;
@@ -40,57 +36,21 @@ const PlayerCreatorPage: React.FC = () => {
     prehistory: string;
   };
 
-  const submitForm = (testObject: PlayerObject) => {
-    const player = {
-      id: shortid,
-      isActive: true,
-      isGuest: false,
-      publicName: "",
-      privateName: "",
-      race: "",
-      age: "",
-      moral: "",
-      personalGoal: "",
-      appearance: "",
-      prehistory: "",
-      //- - -
-      needs: [
-        { water: 72 },
-        { food: 72 },
-        { sleep: 72 },
-        { purity: 72 },
-        { endurance: 150 },
-      ],
-      effects: [
-        { buffs: {} },
-        { debuffs: {} },
-        { hiddenBuffs: {} },
-        { hiddenDebuffs: {} },
-      ],
-      //- - -
-      stats: [
-        { damage: 20 },
-        { health: 20 },
-        { endurance: 20 },
-        { magicDamage: 20 },
-        { will: 30 },
-        { mind: 30 },
-      ],
-      skills: [{}],
-      abilities: { fireBall: {} },
-      //- - -
-      inventory: [
-        { weapon: {} },
-        { apparel: {} },
-        { potions: {} },
-        { ingredients: {} },
-        { scrolls: {} },
-        { equipment: {} },
-        { misc: {} },
-        { gold: {} },
-        { questItems: {} },
-      ],
+  const submitForm = () => {
+    const player: PlayerObject = {
+      id: nanoid(),
+      publicName: publicName,
+      privateName: privateName,
+      race: race,
+      age: age,
+      moral: moral,
+      personalGoal: personalGoal,
+      appearance: appearance,
+      prehistory: prehistory,
     };
+    setPlayerObj(player);
+    console.log("submited");
+    return;
   };
 
   return (
@@ -169,7 +129,7 @@ const PlayerCreatorPage: React.FC = () => {
       />
 
       <br />
-      <button type="submit" onClick={() => console.log("clicked")}>
+      <button type="submit" onClick={() => submitForm()}>
         submit
       </button>
     </>
