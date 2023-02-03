@@ -1,9 +1,11 @@
 import { configureStore } from "@reduxjs/toolkit";
 import changeList from "./changeText";
+import playerReducers from "../slices/playersSlices";
 
 const store = configureStore({
   reducer: {
-    todos: changeList,
+    // todos: changeList,
+    players: playerReducers,
   },
 });
 

@@ -1,31 +1,58 @@
 // store configuration
 
-// const Players = [
-   {
-        id: "",
-        isActive: ture, 
-        isGuest: false, // of true if it's regular player
-        namePublic: "Jake",
-        namePrivate: "Jake Porel",
-        race: "Forest Elf",
-        age: 21,
-        appearance: "blue eyes, dark hair",
-        moral: "caotic evil",
-        personalGoal:" rescue father from goblins prison",
-        playerPrehistory: "born in town named "malvic", have junior brother"
-        //- - -
-        needs: [{water: 72}, {food: 72}, {sleep: 72}, {purity: 72}, {endurance: 150}],
-        effects: [{buffs:{}}, {debuffs:{}}, {hiddenBuffs:{}}, {hiddenDebuffs:{}}],
-        //- - -
-        attributes: [{power: 2}, {agility: 3}, {magicka:1}],
-        stats: [{damage: 20}, {health: 20}, {endurance: 20}, {magicDamage: 20}, {will: 30}, {mind: }],
-        skills: [{}],
-        abilities: {fire-ball: {}},
-        //- - -
-        inventory:[{weapon:{}}, {apparel:{}}, {potions:{}}, {ingredients:{}}, {scrolls:{}}, {equipment:{}}, {ф} {misc{}}, {gold{}}, {questItems:{}}]
-    }];
-    
-//test
+// const Players = {
+    enteties: [{
+      id: shortid,
+      isActive: true,
+      isGuest: false,
+      publicName: "",
+      privateName: "",
+      race: "",
+      age: "",
+      moral: "",
+      personalGoal: "",
+      appearance: "",
+      prehistory: "",
+      //- - -
+      needs: [
+        { water: 72 },
+        { food: 72 },
+        { sleep: 72 },
+        { purity: 72 },
+        { endurance: 150 },
+      ],
+      effects: [
+        { buffs: {} },
+        { debuffs: {} },
+        { hiddenBuffs: {} },
+        { hiddenDebuffs: {} },
+      ],
+      //- - -
+      stats: [
+        { damage: 20 },
+        { health: 20 },
+        { endurance: 20 },
+        { magicDamage: 20 },
+        { will: 30 },
+        { mind: 30 },
+      ],
+      skills: [{}],
+      abilities: { fireBall: {} },
+      //- - -
+      inventory: [
+        { weapon: {} },
+        { apparel: {} },
+        { potions: {} },
+        { ingredients: {} },
+        { scrolls: {} },
+        { equipment: {} },
+        { misc: {} },
+        { gold: {} },
+        { questItems: {} },
+      ],
+    }]
+};
+
 // const settings = {
     //all
     moralTypes: ["Lawful Good","Neutral Good","Chaotic Good","Lawful Neutral","Neutral","Chaotic Neutral","Lawful Evil","Neutral Evil","Chaotic Evil",]

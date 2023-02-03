@@ -1,13 +1,28 @@
 import { useEffect, useState } from "react";
+import { nanoid } from "nanoid";
+import { useAppSelector } from "../../hooks/hook";
 
 const PlayerCreatorPage: React.FC = () => {
-  // const [publicNameValue, setPublicNameValue] = useState("");
-  // const [privateNameValue, setPrivateNameValue] = useState("");
-  const [testObject, setTestObject] = useState({});
+  const [publicName, setPublicName] = useState("no name");
+  const [privateName, setPrivateName] = useState("no name");
+  const [race, setRace] = useState("no race");
+  const [age, setAge] = useState("no age");
+  const [moral, setMoral] = useState("no moral");
+  const [personalGoal, setPersonalGoal] = useState("no goal");
+  const [appearance, setAppearance] = useState("no appearance");
+  const [prehistory, setPrehistory] = useState("no prehistory");
+  const [playerObj, setPlayerObj] = useState({});
+
+  const players = useAppSelector((state) => state.players.players);
+
+  // const uniqueId = nanoid();
 
   useEffect(() => {
-    console.log(testObject);
-  });
+    console.log(playerObj);
+    // console.log(`UNIQUEID:${uniqueId}`);
+    // console.log(`UNIQUEID-V2:${uniqueId2}`);
+    // console.log(nanoid());
+  }, [playerObj]);
 
   type PlayerObject = {
     id: string;
@@ -21,9 +36,21 @@ const PlayerCreatorPage: React.FC = () => {
     prehistory: string;
   };
 
-  const submitForm = (testObject: PlayerObject) => {
-    // let keyed = testObject.privateName;
-    // let result = { keyed: testObject };
+  const submitForm = () => {
+    const player: PlayerObject = {
+      id: nanoid(),
+      publicName: publicName,
+      privateName: privateName,
+      race: race,
+      age: age,
+      moral: moral,
+      personalGoal: personalGoal,
+      appearance: appearance,
+      prehistory: prehistory,
+    };
+    setPlayerObj(player);
+    console.log("submited");
+    return;
   };
 
   return (
@@ -34,7 +61,7 @@ const PlayerCreatorPage: React.FC = () => {
         type="text"
         placeholder="public name"
         onChange={(e) => {
-          setTestObject({ ...testObject, publicName: e.target.value });
+          setPublicName(e.target.value);
         }}
       />
       <br />
@@ -42,7 +69,8 @@ const PlayerCreatorPage: React.FC = () => {
         type="text"
         placeholder="private name"
         onChange={(e) => {
-          setTestObject({ ...testObject, privateName: e.target.value });
+          setPrivateName(e.target.value);
+          // setTestObject({ ...testObject, privateName: e.target.value });
         }}
       />
       <br />
@@ -50,7 +78,8 @@ const PlayerCreatorPage: React.FC = () => {
         type="text"
         placeholder="race"
         onChange={(e) => {
-          setTestObject({ ...testObject, race: e.target.value });
+          setRace(e.target.value);
+          // setTestObject({ ...testObject, race: e.target.value });
         }}
       />
       <br />
@@ -58,7 +87,8 @@ const PlayerCreatorPage: React.FC = () => {
         type="text"
         placeholder="age"
         onChange={(e) => {
-          setTestObject({ ...testObject, age: e.target.value });
+          setAge(e.target.value);
+          // setTestObject({ ...testObject, age: e.target.value });
         }}
       />
       <br />
@@ -66,7 +96,8 @@ const PlayerCreatorPage: React.FC = () => {
         type="text"
         placeholder="moral"
         onChange={(e) => {
-          setTestObject({ ...testObject, moral: e.target.value });
+          setMoral(e.target.value);
+          // setTestObject({ ...testObject, moral: e.target.value });
         }}
       />
       <br />
@@ -74,7 +105,8 @@ const PlayerCreatorPage: React.FC = () => {
         type="text"
         placeholder="personal goal"
         onChange={(e) => {
-          setTestObject({ ...testObject, personalGoal: e.target.value });
+          setPersonalGoal(e.target.value);
+          // setTestObject({ ...testObject, personalGoal: e.target.value });
         }}
       />
       <br />
@@ -82,7 +114,8 @@ const PlayerCreatorPage: React.FC = () => {
         type="text"
         placeholder="appearance"
         onChange={(e) => {
-          setTestObject({ ...testObject, appearance: e.target.value });
+          setAppearance(e.target.value);
+          // setTestObject({ ...testObject, appearance: e.target.value });
         }}
       />
       <br />
@@ -90,15 +123,13 @@ const PlayerCreatorPage: React.FC = () => {
         type="text"
         placeholder="prehistory"
         onChange={(e) => {
-          setTestObject({ ...testObject, prehistory: e.target.value });
+          setPrehistory(e.target.value);
+          // setTestObject({ ...testObject, prehistory: e.target.value });
         }}
       />
 
-      <p>are you regular player?</p>
-      <button type="button">yes</button>
-
       <br />
-      <button type="submit" onClick={() => console.log("clicked")}>
+      <button type="submit" onClick={() => submitForm()}>
         submit
       </button>
     </>
