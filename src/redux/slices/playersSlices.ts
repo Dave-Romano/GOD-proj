@@ -12,22 +12,39 @@ type PlayerElementTypes = {
   prehistory: string;
 };
 
-type InitialStateTypes = {
-  players: Array;
-};
+// type InitialStateTypes = {
+//   players: object[];
+// };
 
-const initialState: InitialStateTypes = {
-  players: [],
-};
+// const initialState: InitialStateTypes =
+//  {
+//   players: [],
+// };
 
-const testFN = (playerObject: PlayerElementTypes) => {};
+// type InitialStateTypes = {
+//   players: object[];
+// };
+
+const initialState: Array<PlayerElementTypes> = [];
+
+// const testFN = (playerObject: PlayerElementTypes) => {};
 
 const playersSlices = createSlice({
   name: "players",
   initialState,
   reducers: {
-    addPlayer(state, action: PayloadAction<string>) {
-      state.players.push(action.payload);
+    addPlayer(state, action: PayloadAction<PlayerElementTypes>) {
+      state.push({
+        id: action.payload.id,
+        publicName: action.payload.publicName,
+        privateName: action.payload.privateName,
+        race: action.payload.race,
+        age: action.payload.age,
+        moral: action.payload.moral,
+        personalGoal: action.payload.personalGoal,
+        appearance: action.payload.appearance,
+        prehistory: action.payload.prehistory,
+      });
       console.log("reduser is working!!");
     },
   },

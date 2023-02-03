@@ -9,7 +9,7 @@ interface TempProps {}
 
 const Temp: React.FC = () => {
   const dispatch = useAppDispatch();
-  const result = useAppSelector((state) => state.todos.word);
+  const result = useAppSelector((state) => state.players);
 
   const [tempState, setTempState] = useState("second");
   const testSending = () => {
@@ -19,7 +19,7 @@ const Temp: React.FC = () => {
 
   return (
     <>
-      <p>{result}</p>
+      {/* <p>{result}</p> */}
       <button onClick={() => dispatch(changeWord("worp"))}>add</button>
     </>
   );
