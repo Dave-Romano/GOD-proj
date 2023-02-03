@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { nanoid } from "nanoid";
-import { useAppSelector } from "../../hooks/hook";
+import { useAppSelector, useAppDispatch } from "../../hooks/hook";
+import { addPlayer } from "../../redux/slices/playersSlices";
 
 const PlayerCreatorPage: React.FC = () => {
   const [publicName, setPublicName] = useState("no name");
@@ -13,9 +14,10 @@ const PlayerCreatorPage: React.FC = () => {
   const [prehistory, setPrehistory] = useState("no prehistory");
   const [playerObj, setPlayerObj] = useState({});
 
-  const players = useAppSelector((state) => state.players.players);
+  const players = useAppSelector((state) => state.players);
 
   // const uniqueId = nanoid();
+  const dispatch = useAppDispatch();
 
   useEffect(() => {
     console.log(playerObj);
@@ -49,6 +51,7 @@ const PlayerCreatorPage: React.FC = () => {
       prehistory: prehistory,
     };
     setPlayerObj(player);
+    dispatch(addPlayer(player));
     console.log("submited");
     return;
   };
