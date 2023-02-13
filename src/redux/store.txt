@@ -14,13 +14,13 @@
       appearance: "",
       prehistory: "",
       //- - -
-      needs: [
-        { water: 72 },
-        { food: 72 },
-        { sleep: 72 },
-        { purity: 72 },
-        { endurance: 150 },
-      ],
+      needs: {
+    water: 72;
+    food: 72;
+    sleep: 72;
+    purity: 72;
+    endurance: 72;
+      },
       effects: [
         { buffs: {} },
         { debuffs: {} },
