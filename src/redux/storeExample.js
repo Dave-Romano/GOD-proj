@@ -62,7 +62,7 @@ const PlayerPattern = {
     damage: 20,
     complection: 20,
     endurance: 20,
-    magicDamage: 20,
+    magicPower: 20,
     will: 20,
     mind: 20,
   },

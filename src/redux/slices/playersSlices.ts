@@ -11,23 +11,23 @@ type PlayerElementTypes = {
   appearance: string;
   prehistory: string;
   //- - -
-  needs: {
-    water: 72;
-    food: 72;
-    sleep: 72;
-    purity: 72;
-    endurance: 72;
-  };
-  effects: {
-    visible: {
-      buffs: {};
-      debuffs: {};
-    };
-    hidden: {
-      buffs: {};
-      debuffs: {};
-    };
-  };
+  // needs: {
+  //   water: 72;
+  //   food: 72;
+  //   sleep: 72;
+  //   purity: 72;
+  //   endurance: 72;
+  // };
+  // effects: {
+  //   visible: {
+  //     buffs: {};
+  //     debuffs: {};
+  //   };
+  //   hidden: {
+  //     buffs: {};
+  //     debuffs: {};
+  //   };
+  // };
 };
 
 // type InitialStateTypes = {
@@ -62,7 +62,6 @@ const playersSlices = createSlice({
         personalGoal: action.payload.personalGoal,
         appearance: action.payload.appearance,
         prehistory: action.payload.prehistory,
-        history: "",
       });
       console.log("reduser is working!!");
     },

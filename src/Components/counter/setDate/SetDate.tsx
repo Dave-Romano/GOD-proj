@@ -1,11 +1,11 @@
-import InputField from "../../common/InputField";
+import InputFieldText from "../../common/InputFieldText";
 import Button from "../../common/Button";
 
 const SetDate = () => {
   return (
     <>
       <p></p>
-      <InputField />
+      <InputFieldText placeholder="this" onChange={""} />
       <Button title="Change date" />
     </>
   );
